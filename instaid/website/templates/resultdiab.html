@@ -1,0 +1,80 @@
+{% extends "disease_page.html" %}
+{% block page %}
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h2 class="pt-10 text-center">Diabetes Disease Prediction </h2>
+  
+  <div style="width: 90%; margin: auto; text-align: center">
+  	{% if prediction == 0 %}
+      <br>
+      {% if Insulin == '0' %}
+      <br>
+      <p style="font-style: italic; font-size: 20px">Sorry, it seems that you are in risk of getting Type 1 Diabetes disease</p>
+      <h1>Treatment for type 1 diabetes includes:</h1>
+      <ul style=" text-align: left; margin-left: 350px;">
+        <li>Taking insulin</li>
+        <li>Counting carbohydrates, fats and protein</li>
+        <li>Monitoring blood sugar often</li>
+        <li>Eating healthy foods</li>
+        <li>Exercising regularly and keeping a healthy weight</li>
+      </ul>
+      <br>
+      <br>
+      {% else %}
+      <br>
+      <p style="font-style: italic; font-size: 20px">Sorry, it seems that you are in risk of getting Type 2 Diabetes disease</p>
+      <h1>Treatment for type 2 diabetes includes:</h1>
+      <ul style=" text-align: left; margin-left: 350px;">
+        <li>Healthy eating</li>
+        <li>Regular exercise</li>
+        <li>Possibly, diabetes medication or insulin therapy</li>
+        <li>Blood sugar monitoring</li>
+        <li>Weight loss</li>
+      </ul>
+      <br>
+      {% endif %}
+      <br>
+       <div class="prediction text-center">
+		    <a href="/" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Back Home</a>
+	  	</div>
+      <br>
+      <br>
+
+    {% elif prediction == 1 %}
+      <br>
+      <br>
+      <p style="font-style: italic; font-size: 20px">No need to fear. You have no dangerous symptoms of the Diabetes disease</p>
+      <br>
+      <br>
+      <div class="prediction text-center">
+		    <a href="/" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Back Home</a>
+	  	</div>
+
+
+     {% elif prediction == 2 %}
+      <br>
+      <br>
+      <p style="font-style: italic; font-size: 20px">No need to fear. You have no dangerous symptoms of the Diabetes disease</p>
+      <br>
+      <br>
+
+
+      <div class="prediction text-center">
+		    <a href="/" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Back Home</a>
+	  	</div>
+
+
+     {% endif %}
+  </div>
+  <br>
+  <br>
+  <br>
+
+    
+{% endblock %}

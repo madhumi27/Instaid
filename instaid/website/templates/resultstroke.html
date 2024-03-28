@@ -1,0 +1,82 @@
+{% extends "disease_page.html" %}
+{% block page %}
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h2 class="pt-10 text-center">{{page}} Disease Prediction </h2>
+  
+
+  <div style="width: 90%; margin: auto; text-align: center">
+  	{% if prediction == 0 %}
+      <br>
+      <br>
+      <p style="font-style: italic; font-size: 20px">No need to fear. You have no dangerous symptoms of the {{page}} disease</p>
+      <br>
+      <br>
+       <div class="prediction text-center">
+		    <a href="/" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Back Home</a>
+	  	</div>
+      <br>
+      <br>
+
+    {% elif prediction == 1 %}
+      <br>
+      <br>
+      {% if glu|int>140 and tens=='1' %}
+      <p style="font-style: italic; font-size: 20px">Sorry, it seems that you are in risk of getting Brain cancer,Mental Disorder</p>
+      <br>
+      <h1>Treatment for severe stroke disease includes:</h1>
+      <ul style=" text-align: left; margin-left: 350px;">
+        <li>Tissue plasminogen activator (tPA)</li>
+        <li>Thrombolysis – "clot buster" medicine. </li>
+        <li>Thrombectomy.</li>
+        <li>Aspirin and other antiplatelets. </li>
+        <li>Anticoagulants.</li>
+        <li>Blood pressure medicines.</li>
+        <li>Carotid endarterectomy.</li>
+      </ul>
+      {% else %}
+      <br>
+      <p style="font-style: italic; font-size: 20px">Sorry, it seems that you are in  Head ache</p>
+      <br>
+      <h1>Treatment for Head ache includes:</h1>
+      <ul style=" text-align: left; margin-left: 350px;">
+        <li>Hot or cold compresses to your head or neck.</li>
+        <li>Massage and small amounts of caffeine.</li>
+        <li>Cognitive behavioral therapy.</li>
+        <li>Biofeedback.</li>
+        <li>Acupuncture</li>
+      </ul>
+      {% endif %}
+
+      <div class="prediction text-center">
+		    <a href="/" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Back Home</a>
+	  	</div>
+
+
+     {% elif prediction == 2 %}
+      <br>
+      <br>
+      <p style="font-style: italic; font-size: 20px">No need to fear. You have no dangerous symptoms of the {{page}} disease</p>
+      <br>
+      <br>
+
+
+      <div class="prediction text-center">
+		    <a href="/" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Back Home</a>
+	  	</div>
+
+
+     {% endif %}
+  </div>
+  <br>
+  <br>
+  <br>
+
+    
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "disease_page.html" %}
+{% block page %}
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h2 class="pt-10 text-center">Heart Disease Prediction </h2>
+
+  <div style="width: 90%; margin: auto; text-align: center">
+  	{% if prediction == 0 %}
+      <br>
+      <br>
+      <p style="font-style: italic; font-size: 20px">No need to fear. You have no dangerous symptoms of the Heart disease</p>
+      <br>
+      <br>
+       <div class="prediction text-center">
+		    <a href="/" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Back Home</a>
+	  	</div>
+      <br>
+      <br>
+
+    {% elif prediction == 1 %}
+      <br>
+      {% if rbp|int< 140 %}
+      <br>
+      <p style="font-style: italic; font-size: 20px">Sorry, it seems that you are in Normal Heart disease</p>
+      <h1>Treatment for Normal heart disease includes:</h1>
+      <ul style=" text-align: left; margin-left: 350px;">
+        <li>Angiotensin-converting enzyme (ACE) inhibitors</li>
+        <li>Angiotensin II receptor blockers</li>
+        <li>Beta blockers.</li>
+        <li>Diuretics. </li>
+        <li>Digoxin (Lanoxin).</li>
+        <li>Hydralazine and isosorbide dinitrate (BiDil).</li>
+        <li>Vericiguat (Verquvo). </li>
+      </ul>
+      <br>
+      {% else %}
+      <br>
+      <p style="font-style: italic; font-size: 20px">Sorry, it seems that you are in risk of Severe Heart disease.Which may cause Heart Attack</p>
+      <h1>Treatment for severe heart disease includes:</h1>
+      <ul style=" text-align: left; margin-left: 350px;">
+        <li>Angiotensin-converting enzyme (ACE) inhibitors</li>
+        <li>Angiotensin II receptor blockers</li>
+        <li>Beta blockers.</li>
+        <li>Diuretics. </li>
+        <li>Digoxin (Lanoxin).</li>
+        <li>Hydralazine and isosorbide dinitrate (BiDil).</li>
+        <li>Vericiguat (Verquvo). </li>
+      </ul>
+      <br>
+      <br>
+      {% endif %}
+
+      <div class="prediction text-center">
+		    <a href="/" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Back Home</a>
+	  	</div>
+
+     {% elif prediction == 2 %}
+      <br>
+      <br>
+      <p style="font-style: italic; font-size: 20px">No need to fear. You have no dangerous symptoms of the Heart disease</p>
+      <br>
+      <br>
+
+      <div class="prediction text-center">
+		    <a href="/" class="smoothScroll btn btn-success wow fadeInDown" data-wow-delay="2000">Back Home</a>
+	  	</div>
+
+     {% endif %}
+  </div>
+  <br>
+  <br>
+  <br>
+
+{% endblock %}
